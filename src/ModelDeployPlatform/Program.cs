@@ -1,5 +1,7 @@
 
 using CommonSharp;
+using System;
+using System.Windows.Forms;
 
 namespace ModelDeployPlatform
 {
@@ -15,7 +17,7 @@ namespace ModelDeployPlatform
             // see https://aka.ms/applicationconfiguration.
             ConsoleShow.AllocConsole();
             Console.Title = "Êý¾ÝÏÔÊ¾";
-            ApplicationConfiguration.Initialize();
+          //  ApplicationConfiguration.Initialize();
             //Application.Run(new FormEngineConvert());
             Application.Run(new FormModelDeployPlat());
         }

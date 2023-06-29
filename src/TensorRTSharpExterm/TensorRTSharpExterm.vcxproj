@@ -40,15 +40,15 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,9 +71,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\include;D:\Program Files\TensorRT-8.4.0.6\include;E:\OpenCV Source\opencv-4.5.5\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\x64;D:\Program Files\TensorRT-8.4.0.6\lib;E:\OpenCV Source\opencv-4.5.5\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\include;D:\Pro\TensorRT-8.2.4.2\include;D:\Pro\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Pro\opencv\build\x64\vc15\lib;D:\Pro\TensorRT-8.2.4.2\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\lib\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\src\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\include;D:\Pro\TensorRT-8.2.4.2\include;D:\Pro\opencv\build\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>D:\Pro\opencv\build\x64\vc15\lib;D:\Pro\TensorRT-8.2.4.2\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\lib\x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -113,6 +117,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>nvinfer.lib;nvinfer_plugin.lib;nvonnxparser.lib;nvparsers.lib;cublas.lib;cublasLt.lib;cuda.lib;cudadevrt.lib;cudart.lib;cudart_static.lib;cudnn.lib;cudnn64_8.lib;cudnn_adv_infer.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train.lib;cudnn_ops_train64_8.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;nppc.lib;nppial.lib;nppicc.lib;nppidei.lib;nppif.lib;nppig.lib;nppim.lib;nppist.lib;nppisu.lib;nppitc.lib;npps.lib;nvblas.lib;nvjpeg.lib;nvml.lib;nvrtc.lib;OpenCL.lib;opencv_world455d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

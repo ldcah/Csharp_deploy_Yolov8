@@ -70,11 +70,13 @@ namespace ResultSharp
     /// 人体关键点数据
     /// </summary>
     public struct PoseData {
-        public float[] score = new float[17];
-        public List<Point> point = new List<Point>();
+        public float[] score ;
+        public List<Point> point ;
 
         public PoseData(float[] data, float[] scales) 
         {
+            score = new float[17];
+            point = new List<Point>();
             for (int i = 0; i < 17; i++) 
             {
                 Point p = new Point((int)(data[3 * i] * scales[0]), (int)(data[3 * i + 1] * scales[1]));

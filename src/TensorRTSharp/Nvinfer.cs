@@ -1,4 +1,6 @@
-﻿namespace TensorRTSharp
+﻿using System;
+
+namespace TensorRTSharp
 {
     /// <summary>
     /// TensorRT推理类，可以实现模型推理

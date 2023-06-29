@@ -1,4 +1,7 @@
-﻿namespace ResultSharp
+﻿using System.Collections.Generic;
+using System.IO;
+
+namespace ResultSharp
 {
     public class ResultBase
     {
